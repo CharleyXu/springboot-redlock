@@ -1,4 +1,4 @@
-package com.xu.springredlock;
+package com.xu.redlock;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,10 +7,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringBootRedlockApplicationTests {
+public class RedlockApplicationTests {
 
-  @Test
-  public void contextLoads() {
-  }
+	@Test
+	public void contextLoads() {
+	}
 
 }
