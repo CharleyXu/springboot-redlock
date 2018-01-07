@@ -153,4 +153,14 @@ public class RedisUtil {
   public Set<String> rangeByScore(String key, double scoure, double scoure1) {
     return stringRedisTemplate.opsForZSet().rangeByScore(key, scoure, scoure1);
   }
+
+  /**
+   * 生产者发送消息
+   */
+  public void pushMessage(String channel, String message) {
+    stringRedisTemplate.convertAndSend(channel, message);
+  }
+
+
+
 }

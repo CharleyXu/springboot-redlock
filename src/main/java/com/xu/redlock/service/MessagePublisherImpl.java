@@ -6,17 +6,21 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author CharleyXu Created on 2018/1/7.
+ * 消息 发布者 服务实现类
  */
 @Service
 public class MessagePublisherImpl implements MessagePublisher {
 
+  private static final String CHANNEL_NAME = "chat";
   @Autowired
   private RedisUtil redisUtil;
-  //多频道
-  private String[] channels;
 
   @Override
-  public boolean sendMessage(String message) {
-    return false;
+  public void sendMessage(String message) {
+    try {
+      redisUtil.pushMessage(CHANNEL_NAME, message);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 }
