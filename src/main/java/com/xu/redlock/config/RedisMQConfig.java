@@ -27,7 +27,7 @@ public class RedisMQConfig {
 
   @Bean
   MessageListenerAdapter listenerAdapter(MessageSubscriberImpl messageSubscriber) {
-    //这个地方 是给messageListenerAdapter 传入一个消息接受的处理器，利用反射的方法调用“receiveMessage”
+    //这个地方 是给messageListenerAdapter 传入一个消息接受的处理器，利用反射的方法调用“handleMessage”
     //调用处理器 handleMessage
     return new MessageListenerAdapter(messageSubscriber, "handleMessage");
   }
